@@ -97,4 +97,13 @@ class ListTest < Minitest::Test
     assert_equal "Lastie", list.pop
     assert_equal 3, list.count
   end
+
+  def test_it_deletes_the_only_node
+    skip
+    list = List.new
+    list.push("Solo")
+    assert_equal 1, list.count
+    list.delete("Solo")
+    assert_equal 0, list.count
+  end
 end

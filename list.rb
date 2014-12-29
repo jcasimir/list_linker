@@ -66,6 +66,14 @@ class List
     return count
   end
 
+  def delete(target)
+    # set previous = head
+    # set current = head.next
+    # if current.data == target
+      # ...delete current?
+      # previous.next = nil
+  end
+
   def first
     head.data
   end
