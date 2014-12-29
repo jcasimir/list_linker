@@ -18,6 +18,25 @@ class List
     end
   end
 
+  def pop
+    return nil if head.nil?
+
+    if head.next?
+      previous = head
+      current  = head.next
+      while current.next?
+        previous = current
+        current = current.next
+      end
+      previous.next = nil
+      return current.data
+    else
+      current = head
+      @head = nil
+      return current.data
+    end
+  end
+
   def last_node
     if head.next?
       current = head.next
@@ -26,7 +45,7 @@ class List
       end
       return current
     else
-      return head  
+      return head
     end
   end
 
